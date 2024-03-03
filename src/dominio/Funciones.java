@@ -72,18 +72,12 @@ public class Funciones {
     }
 
 
-    // 6(este aun no esta terminado)
-    // public static double desviacionTipica(ArrayList<Integer> lista, Scanner sc,
-    // int indice, double sum) {
-    // tamaño();
-    // double a = mediaLista(tamaño(),lista, sc);
-    // if (indice <= 0) {
-    // return Math.sqrt(sum / lista.size());
-    // } else {
-    // sum += Math.pow(lista.get(indice-1) - a, 2);
-    // return desviacionTipica(lista, sc, indice - 1, sum);
-    // }
-    // }
+    //6
+    public static double desviacionTipica(ArrayList<Integer> lista,Scanner sc) {
+        double media = mediaLista(lista, sc);
+        double sum = lista.stream().mapToDouble(num -> Math.pow(num - media, 2)).sum();
+        return Math.sqrt(sum / lista.size());
+    }
 
     // 7
     public static int sumaPares(int n) {
